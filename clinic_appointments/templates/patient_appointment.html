@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Appointment Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+
+
+        background: linear-gradient(to bottom right, #006666, #669999);
+    }
+        h2 {
+            color: white;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+{% include 'message.html' %}
+<body>
+    <h2>Patient Appointment Form</h2>
+    <form method="post" action="patient_app">
+        {% csrf_token %}
+        <div>
+           <label for="patient_name">Patient Name:</label>
+<input type="text" id="patient_name" name="patient_name" required>
+<label for="patient_age">Age:</label>
+<input type="number" id="patient_age" name="patient_age" required>
+
+        </div>
+        <div>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="select">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div>
+            <label for="doctor_name">Doctor Name:</label>
+            <select id="doctor_name" name="doctor_name" required>
+                <option value="Select Doctor">Select Doctor</option>
+
+
+                <option value="Dr.Sandip Bhirud">Dr. Sandip Bhirud (Dentist)10.00AM To 2:00PM</option>
+                <option value="Dr.Kishore Jadhavar">Dr.Kishore Jadhavar (Psychiatrist)10.00AM To 2:00PM</option>
+                 <option value="Dr.Priya Palimkar">Dr.Priya Palimkar(Cardiology)10.00AM To 2:00PM </option>
+                 <option value="Dr.Pratik patil">Dr.Pratik patil(Oncologist)10.00AM To 2:00PM </option>
+                 <option value="Dr.Mahesh Sabade">Dr.Mahesh Sabade(Ayurveda)10.00AM To 2:00PM</option>
+                 <option value="Dr.Atul Patil">Dr.Atul Patil(General surgeon)10.00AM To 2:00PM</option>
+
+            </select>
+        </div>
+        <div>
+            <label for="appointment_date">Appointment Date:</label>
+            <input type="date" id="appointment_date" name="appointment_date" required>
+        </div>
+        <div>
+            <label for="appointment_time">Appointment Time:</label>
+            <input type="time" id="appointment_time" name="appointment_time" required>
+        </div>
+        <div>
+            <label for="reason_for_visit">Reason for Visit:</label>
+            <textarea id="reason_for_visit" name="reason_for_visit" rows="4" required></textarea>
+        </div>
+        <div>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+        </div>
+        <div>
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" name="contact" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+<script>
+    setTimeout(function(){
+
+         if($("#msg").length > 0)
+         {
+             $("#msg").remove();
+         }
+    },3000);
+</script>

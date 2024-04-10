@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancelled Appointments</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #80bfff;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #3399ff;
+        }
+        .delete-button {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        h1{
+        color: #003366;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cancelled Appointments</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Patient Name</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for appointment in data1 %}
+                <tr>
+                    <td>{{ appointment.id }}</td>
+                    <td>{{ appointment.patient_name }}</td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        function confirmDelete(appointmentId) {
+            if (confirm('Are you sure you want to delete this appointment?')) {
+                // If confirmed, redirect to delete endpoint passing appointmentId
+                window.location.href = '/delete_appointment?id=' + appointmentId;
+            }
+        }
+    </script>
+</body>
+</html>

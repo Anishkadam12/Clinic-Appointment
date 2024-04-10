@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medicine Information Form</title>
+<style>
+
+    body {
+
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(to bottom right, #006666, #669999);
+    }
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+     ..modal {
+        width: 400px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    h2 {
+    color: white;
+}
+</style>
+</head>
+<body>
+
+<h2>Medicine Information</h2>
+
+<div class="modal">
+<form action="" method="post">
+      <label for="date">Date:</label><br>
+    <input type="date" id="date" name="date"><br><br>
+    <label for="medicine_name">Medicine Name:</label><br>
+    <input type="text" id="medicine_name" name="medicine_name" required><br><br>
+
+
+<!--    <label for="manufacturer">Manufacturer:</label><br>-->
+<!--    <input type="text" id="manufacturer" name="manufacturer" required><br><br>-->
+
+    <label for="dosage">Dosage:</label><br>
+    <input type="text" id="dosage" name="dosage" required><br><br>
+
+
+<!--    <label for="expiry_date">Expiry Date:</label><br>-->
+<!--    <input type="date" id="expiry_date" name="expiry_date" required><br><br>-->
+
+    <label for="quantity">Quantity:</label><br>
+    <input type="number" id="quantity" name="quantity" required><br><br>
+
+<!--    <label for="recommendations">Doctor's Recommendations:</label><br>-->
+<!--    <textarea id="recommendations" name="recommendations" rows="4"></textarea><br><br>-->
+
+    <label for="next_visit_date">Next Visit Date:</label><br>
+    <input type="date" id="next_visit_date" name="next_visit_date"><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+   </div>
+
+</body>
+</html>

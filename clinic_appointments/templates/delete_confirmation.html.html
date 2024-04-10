@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointment Cancellation</title>
+</head>
+<body>
+    {% if confirmation_message %}
+        <p>{{ confirmation_message }}</p>
+    {% else %}
+        <p>No appointment ID provided.</p>
+    {% endif %}
+    <a href="/doctor_dash">Go back to dashboard</a>
+</body>
+</html>

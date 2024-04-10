@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Referral</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(to bottom right, #006666, #669999);
+    }
+    .container {
+        width: 400px;
+    }
+    form {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"], select, textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    textarea {
+        height: 100px;
+        resize: vertical;
+    }
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+
+<body>
+{% include 'message.html' %}
+    <div class="container">
+        <h1>Patient Referral</h1>
+       <form method="post" action="reffral">
+           {% csrf_token %}
+<textarea rows="7" cols="50">
+Doctor Name:
+Dr. Sandip Bhirud (Dentist)10.00AM To 2:00PM
+Dr. Kishore Jadhavar (Psychiatrist)10.00AM To 2:00PM
+Dr. Priya Palimkar (Cardiology)10.00AM To 2:00PM
+Dr. Pratik Patil (Oncologist)10.00AM To 2:00PM
+Dr. Mahesh Sabade (Ayurveda)10.00AM To 2:00PM
+Dr. Atul Patil (General surgeon)10.00AM To 2:00PM
+</textarea>
+
+
+
+
+             <div>
+                 <label for="full_name"> Referral Doctor:</label>
+                <input type="text" id="full_name" name="full_name" placeholder="Enter Doctor name">
+
+            </div>
+
+
+            <div>
+                <label for="patient_name">Patient Name:</label>
+                <input type="text" id="patient_name" name="patient_name" placeholder="Enter patient's name">
+            </div>
+
+            <div>
+                <label for="reason">Reason for Referral:</label>
+                <textarea id="reason" name="reason" placeholder="Enter reason for referral"></textarea>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    setTimeout(function(){
+
+         if($("#msg").length > 0)
+         {
+             $("#msg").remove();
+         }
+    },2000);
+</script>

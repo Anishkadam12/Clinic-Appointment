@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Registration</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    form {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        position: relative;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    form::before,
+    form::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(to right, transparent, lightblue);
+        z-index: 1;
+    }
+    form::before {
+        top: -4px;
+        left: 0;
+    }
+    form::after {
+        bottom: -4px;
+        left: 0;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    label {
+        background: linear-gradient(to right, lightblue, white, pink);
+        color: black;
+        padding: 5px 10px;
+        border-radius: 4px;
+
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transform: translateY(0);
+        transition: transform 0.3s ease;
+        position: relative;
+        z-index: 2;
+    }
+    label:hover {
+        transform: translateY(-3px);
+    }
+
+    h2 {
+        background: linear-gradient(to right, pink, white, lightblue);
+        color: black;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-align: center;
+
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transform: translateY(0);
+        transition: transform 0.3s ease;
+    }
+    h2:hover {
+        transform: translateY(-3px);
+    }
+</style>
+
+
+</head>
+{% include 'message.html' %}
+<body>
+
+<form method="post" action="register2">
+    {% csrf_token %}
+    <h2>Doctor Registration</h2>
+    <label for="full_name">Full Name:</label>
+    <input type="text" id="full_name" name="full_name" required>
+    <label for="contact">Contact:</label>
+    <input type="text" id="contact" name="contact" required>
+
+
+
+    <label for="specialization">Specialization:</label>
+    <input type="text" id="specialization" name="specialization" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
+<script>
+    setTimeout(function(){
+
+         if($("#msg").length > 0)
+         {
+             $("#msg").remove();
+         }
+    },3000);
+</script>

@@ -1,0 +1,127 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <meta name="description" content="Responsive Bootstrap Dashboards">
+
+
+    <title>Hospital Patients</title>
+
+
+
+    <link type="text/css" href="{% static 'css/Bm.css' %}" rel="stylesheet">
+
+
+    <link type="text/css" href="{% static 'css/S.css' %}" rel="stylesheet">
+
+
+    <link type="text/css" href="{% static 'css/Mm.css' %}" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="{% static 'css/dataTables.bs4.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/dataTables.bs4-custom.css' %}"/>
+<style>
+    h2{
+    color: #006666;
+    }
+</style>
+
+</head>
+
+<body>
+
+
+<div class="content-wrapper">
+    <h2>Appointments</h2>
+
+    <div class="row gutters">
+        <div class="col-sm-12">
+            <div class="table-container">
+
+
+
+                <div class="table-responsive">
+                    <table id="basicExample" class="table">
+                        <thead>
+                        <tr>
+                            <th>Patient Id</th>
+                            <th>Patient Name</th>
+                            <th>Patient Age</th>
+                            <th>Gender</th>
+                            <th>Doctor Name</th>
+                            <th>Appointment Date</th>
+                            <th>Appointment Time</th>
+                            <th>Reason For Visit</th>
+                            <th>Address</th>
+                            <th>Contact</th>
+                            <th>Actions</th>
+                        </tr>
+
+
+                        {% for appointment in data %}
+
+                <tr>
+                    <td>{{appointment.id}}</td>
+                    <td>{{appointment.patient_name}}</td>
+                    <td>{{appointment.patient_age}}</td>
+                    <td>{{appointment.gender}}</td>
+                    <td>{{appointment.doctor_name}}</td>
+                    <td>{{appointment.appointment_date}}</td>
+                    <td>{{appointment.appointment_time}}</td>
+                    <td>{{appointment.reason_for_visit}}</td>
+                    <td>{{appointment.address}}</td>
+                    <td>{{appointment.contact}}</td>
+
+                     <td class="action-buttons">
+                         <button class="btn btn-success" onclick="window.location">Approve</button>
+                         <button class="btn btn-danger" onclick="window.location">Cancel</button>
+
+                     </td>
+                </tr>
+
+                {% endfor %}
+
+                        </thead>
+
+            </table>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+<script src="{% static 'js/Jm.js' %}"></script>
+<script src="{% static 'js/Bbm.js' %}"></script>
+<script src="{% static 'js/Mo.js' %}"></script>
+
+
+
+
+<script src="{% static 'js/dataTables.min.js' %}"></script>
+<script src="{% static 'js/dataTables.bootstrap.min.js' %}"></script>
+
+
+<script src="{% static 'js/custom-datatables.js' %}"></script>
+
+<script src="{% static 'js/M.js' %}"></script>
+
+</body>
+
+</html>

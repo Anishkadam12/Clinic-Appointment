@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Report Upload</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(to bottom right, #006666, #669999);
+    }
+    .modal {
+        width: 400px;
+        background-color: none;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    .modal input[type="text"], .modal select, .modal textarea {
+        width: calc(100% - 16px);
+        padding: 8px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    .modal textarea {
+        height: 100px;
+        resize: vertical;
+    }
+    .modal button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .modal button:hover {
+        background-color: #45a049;
+    }
+     form {
+        background-color: light green;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Updated box shadow to black */
+    }
+    h2 {
+    color: white;
+}
+
+</style>
+</head>
+<body>
+
+<div class="modal">
+    <h2>Upload Report</h2>
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="text" name="patient_name" placeholder="patient's name" value="{{appointment.patient_name}}"><br><br>
+       <input type="text" name="doctor_name" placeholder="Doctor Name" value="{{appointment.doctor_name}}"><br><br>
+
+
+
+        <label for="report_file">Report File:</label><br>
+        <input type="file" id="report_file" name="report_file"><br>
+
+        <label for="details">Report Details:</label><br>
+        <textarea id="details" name="report_details" placeholder="Report Details"></textarea><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
